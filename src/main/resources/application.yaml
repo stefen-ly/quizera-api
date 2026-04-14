@@ -10,10 +10,6 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
     password: ${SPRING_DATASOURCE_PASSWORD:1929}
     driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://localhost:5432/quizera_db011
-#    username: postgres
-#    password: 1929
-#    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
@@ -24,4 +20,4 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
 server:
-  port: 8084
+  port: ${PORT:8084}
