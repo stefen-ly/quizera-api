@@ -24,7 +24,10 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                // disable csrf (IMPORTANT for Postman)
+                //enable CORS
+                .cors(cors -> {})
+
+                // disable csrf
                 .csrf(csrf -> csrf.disable())
 
                 // stateless API
@@ -34,19 +37,16 @@ public class WebSecurityConfig {
 
                 // authorization rules
                 .authorizeHttpRequests(auth -> auth
-                        // PUBLIC endpoints
                         .requestMatchers(
                                 "/api/auth/**",
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html"
                         ).permitAll()
-
-                        // everything else protected
                         .anyRequest().authenticated()
                 )
 
-                // add JWT filter
+                // JWT filter
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
