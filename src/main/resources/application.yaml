@@ -6,7 +6,7 @@ spring:
     name: project
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/quizera_db011}
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/quizera_db011}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
     password: ${SPRING_DATASOURCE_PASSWORD:1929}
     driver-class-name: org.postgresql.Driver
