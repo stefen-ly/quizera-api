@@ -1,7 +1,0 @@
-export PGHOST=localhost
-export PGPORT=5432
-export PGDATABASE=quizera_db011
-export PGUSER=postgres
-export PGPASSWORD=1929
-
-java -jar build/libs/project-0.0.1-SNAPSHOT.jar
