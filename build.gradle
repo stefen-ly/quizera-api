@@ -48,3 +48,7 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootJar {
+	mainClass = 'co.istad.quizera.project.QuizeraApplication'
+}
